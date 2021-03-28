@@ -45,11 +45,27 @@ Route::get('/rotacomregras/{nome}/{n}', function ($nome, $n) {
 
 Route::prefix('/app')->group(function(){
     
-    Route::get('/user', function () {
+    Route::get('/', function () {
+        return view('app');
+    })->name('app');
+
+    Route::get('/profile/user', function () {
         return view('user');
-    });
+    })->name('app.user');
     
     Route::get('/profile', function () {
         return view('profile');
-    });
+    })->name('app.profile');
+
+    Route::get('/produtos', function () {
+        echo "<ol>";
+        echo "<li>Laranja</li>";
+        echo "<li>Maça</li>";
+        echo "<li>Pera</li>";
+        echo "<li>Pessego</li>";
+        echo "<li>Jabuticaba</li>";
+        echo "</ol>";
+        
+
+    })->name('meusprodutos');
 });
