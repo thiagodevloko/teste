@@ -24,3 +24,10 @@ Route::get('/teste', function () {
 Route::get('/teste/{nome}', function ($nome) {
     echo "Olá Seja bem vindo, " . $nome;
 });
+
+Route::get('/seunome/{nome?}', function ($nome=null) {
+    if (isset ($nome))
+    echo "Olá Seja bem vindo, " . $nome;
+    else
+    echo "voce nao digitou nenhum nome";
+});
