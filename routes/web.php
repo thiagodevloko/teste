@@ -14,11 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
-Route::get('/teste', function () {
-    echo "Olá Seja bem vindo!!!";
+Route::get('/user', function () {
+    return view('user');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
 });
 
 Route::get('/teste/{nome}', function ($nome) {
