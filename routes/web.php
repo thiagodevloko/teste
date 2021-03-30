@@ -56,16 +56,19 @@ Route::prefix('/app')->group(function(){
     Route::get('/profile', function () {
         return view('profile');
     })->name('app.profile');
+});
 
-    Route::get('/produtos', function () {
-        echo "<ol>";
-        echo "<li>Laranja</li>";
-        echo "<li>Maça</li>";
-        echo "<li>Pera</li>";
-        echo "<li>Pessego</li>";
-        echo "<li>Jabuticaba</li>";
-        echo "</ol>";
-        
+Route::get('/produtos', function () {
+    echo "<ol>";
+    echo "<li>Laranja</li>";
+    echo "<li>Maça</li>";
+    echo "<li>Pera</li>";
+    echo "<li>Pessego</li>";
+    echo "<li>Jabuticaba</li>";
+    echo "</ol>";
+})->name('meusprodutos');
+Route::redirect('todosprodutos1', 'produtos', 301);
 
-    })->name('meusprodutos');
+Route::get('todosprodutos2', function(){
+    return redirect()->route('meusprodutos');
 });
