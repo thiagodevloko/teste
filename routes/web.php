@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,3 +74,8 @@ Route::redirect('todosprodutos1', 'produtos', 301);
 Route::get('todosprodutos2', function(){
     return redirect()->route('meusprodutos');
 });
+
+Route::post('/requisicoes', function(Request $request){
+    return 'Hello POST';
+});
+
