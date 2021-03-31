@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class ClienteControlador extends Controller
 {
     private $clientes = [
-        ['id' =>1, 'nome'=>'Ademir'],
-        ['id' =>2, 'nome'=>'João'],
-        ['id' =>3, 'nome'=>'Maria'],
-        ['id' =>4, 'nome'=>'Aline'],
+        ['id' => 1, 'nome'=>'Ademir'],
+        ['id' => 2, 'nome'=>'João'],
+        ['id' => 3, 'nome'=>'Maria'],
+        ['id' => 4, 'nome'=>'Aline'],
     ];
     
     public function __construct(){
@@ -65,7 +65,9 @@ class ClienteControlador extends Controller
      */
     public function show($id)
     {
-        //
+        $clientes = session('clientes');
+        $clientes [$id -1];
+        return view('clientes.info', compact(['clientes']));
     }
 
     /**
