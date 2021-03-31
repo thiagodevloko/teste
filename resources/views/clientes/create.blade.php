@@ -2,6 +2,7 @@
 
 <form action="{{route('clientes.store')}}" method="POST">
     @csrf
-    <input type="text" name="" id="nome">
-    <label for="">Nome</label>   
+    <label for="">Nome</label>  
+    <input type="text" name="nome">
+    <button type="submit">Cadastrar</button>
 </form>
