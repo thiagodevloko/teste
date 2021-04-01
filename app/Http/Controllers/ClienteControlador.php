@@ -27,7 +27,15 @@ class ClienteControlador extends Controller
     public function index()
     {
         $clientes = session ('clientes');
-        return view('clientes.index', compact(['clientes']));
+        $titulo = "Todos os clientes:";
+        return view('clientes.index',
+            ['clientes'=>$clientes, 'titulo'=>$titulo]);
+       
+       
+        // return view('clientes.index')
+        // ->with('clientes',$clientes)
+        // ->with('titulo',$titulo);
+        // // return view('clientes.index', compact(['clientes']));
     }
 
     /**
@@ -67,8 +75,8 @@ class ClienteControlador extends Controller
     {
         $clientes = session('clientes');
         $index = $this-> getIndex($id, $clientes);
-        $cliente = $clientes[$index];
-        return view('clientes.info', compact(['clientes']));
+        $clientes = $clientes[$index];
+        return view ('clientes.info', compact(['clientes']));
     }
 
     /**
