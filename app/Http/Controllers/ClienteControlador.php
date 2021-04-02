@@ -30,12 +30,11 @@ class ClienteControlador extends Controller
         $titulo = "Todos os clientes:";
         return view('clientes.index',
             ['clientes'=>$clientes, 'titulo'=>$titulo]);
-       
-       
+
         // return view('clientes.index')
         // ->with('clientes',$clientes)
         // ->with('titulo',$titulo);
-        // // return view('clientes.index', compact(['clientes']));
+        // return view('clientes.index', compact(['clientes']));
     }
 
     /**
@@ -57,7 +56,12 @@ class ClienteControlador extends Controller
     public function store(Request $request)
     {
         $clientes = session('clientes');
+        if(!$clientes){
+        $id = 1;
+        }
+        else{
         $id = end($clientes)['id'] + 1;
+        }
         $nome = $request->nome;
         $dados = ["id"=>$id, "nome"=>$nome];
         $clientes[] = $dados;
