@@ -1,3 +1,6 @@
+@extends('layouts.principal')
+
+@section('conteudo')
 <h3>Edite Cliente</h3>
 
 <form action="{{route('clientes.update', $clientes['id'])}}" method="POST">
@@ -7,4 +10,5 @@
     <input type="text" name="nome" value="{{$clientes['nome']}}">
     <button type="submit">Cadastrar</button>
 </form>
+@endsection
 
