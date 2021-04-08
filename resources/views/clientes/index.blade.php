@@ -4,19 +4,19 @@
 <h3>{{$titulo}}</h3>
 <a href="{{ route ('clientes.create')}}">Novo Cliente</a>
 <style>
-    li{
+    .clientes > li{
         display: flex;
         list-style: none;
         padding-bottom: 5px;     
     }
-    a{
+    .clientes > li > a{
         padding-left: 10px;
         margin-right: 10px;
     }
     
 </style>
 @if (count($clientes)>0)    
-<ul>
+<ul class="clientes">
     @foreach ($clientes as $c)
     <li>
         {{ $c['id']}} | {{$c['nome']}} |
